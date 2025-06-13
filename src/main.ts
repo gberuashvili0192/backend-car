@@ -1,9 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const logger = new Logger('Bootstrap');
+  const app = await NestFactory.create(AppModule, {
+    logger: ['error', 'warn', 'log', 'debug', 'verbose'],
+  });
 
   // Enable CORS with specific origins
   app.enableCors({
@@ -25,6 +29,7 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3000;
   await app.listen(port, '0.0.0.0'); // Listen on all network interfaces
-  console.log(`Application is running on port ${port}`);
+  logger.log(`Application is running on port ${port}`);
+  logger.log(`MongoDB URI: ${process.env.MONGODB_URI}`);
 }
 bootstrap();
