@@ -1,0 +1,55 @@
+import { ItemCategory } from '../models/exchange-item.model';
+
+// Default exchange items that can be loaded into the database
+export const DEFAULT_EXCHANGE_ITEMS = [
+  {
+    id: 'discount_5',
+    category: ItemCategory.DISCOUNT,
+    name: '5% ფასდაკლება',
+    description: 'გაცვალეთ 100 XP 5% ფასდაკლებაზე ნებისმიერ სერვისზე',
+    xpCost: 100,
+    icon: 'discount',
+    color: '#4CAF50',
+    active: true,
+  },
+  {
+    id: 'discount_10',
+    category: ItemCategory.DISCOUNT,
+    name: '10% ფასდაკლება',
+    description: 'გაცვალეთ 200 XP 10% ფასდაკლებაზე ნებისმიერ სერვისზე',
+    xpCost: 200,
+    icon: 'discount',
+    color: '#2196F3',
+    active: true,
+  },
+  {
+    id: 'free_car_wash',
+    category: ItemCategory.SERVICE,
+    name: 'უფასო ავტომობილის რეცხვა',
+    description: 'გაცვალეთ 300 XP უფასო ავტომობილის რეცხვაზე',
+    xpCost: 300,
+    icon: 'car_wash',
+    color: '#9C27B0',
+    active: true,
+  },
+  {
+    id: 'badge_car_lover',
+    category: ItemCategory.BADGE,
+    name: 'მანქანის მოყვარული',
+    description: 'გაცვალეთ 150 XP სპეციალურ ბეჯზე "მანქანის მოყვარული"',
+    xpCost: 150,
+    icon: 'badge',
+    color: '#FF9800',
+    active: true,
+  },
+  {
+    id: 'premium_week',
+    category: ItemCategory.PREMIUM,
+    name: 'პრემიუმ სტატუსი - 1 კვირა',
+    description: 'გაცვალეთ 500 XP 1 კვირიან პრემიუმ სტატუსზე',
+    xpCost: 500,
+    icon: 'premium',
+    color: '#F44336',
+    active: true,
+  },
+];
